@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    public Vector2 menuSize = new Vector2(250, 350);
+    public Vector2 menuSize = new Vector2(200, 250);
 
     public float buttonMinHeight = 60f;
 
