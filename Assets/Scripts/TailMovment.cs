@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Events;
 
 public class TailMovment : MonoBehaviour
 {
@@ -11,29 +12,32 @@ public class TailMovment : MonoBehaviour
     public GameObject tailTargetObj;
     public SnakeMovment mainSnake;
 
+
     void Start()
     {
         mainSnake = GameObject.FindGameObjectWithTag("SnakeMain").GetComponent<SnakeMovment>();
-        Speed = mainSnake.Speed+1.5f;
-        tailTargetObj = mainSnake.tailObjects[mainSnake.tailObjects.Count-2];
+        Speed = mainSnake.Speed + 1.5f;
+        tailTargetObj = mainSnake.tailObjects[mainSnake.tailObjects.Count - 2];
         indx = mainSnake.tailObjects.IndexOf(gameObject);
     }
     void Update()
     {
         tailTarget = tailTargetObj.transform.position;
         transform.LookAt(tailTarget);
-        transform.position = Vector3.Lerp(transform.position,tailTarget,Time.deltaTime*Speed);
+        transform.position = Vector3.Lerp(transform.position, tailTarget, Time.deltaTime * Speed);
     }
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("SnakeMain"))
         {
-            if(indx > 2)
+            if (indx > 2)
             {
                 SceneManager.LoadScene("GameOver");
+
             }
-            
+
         }
-        
+
     }
 }
+

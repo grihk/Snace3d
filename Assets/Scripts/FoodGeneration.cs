@@ -9,6 +9,7 @@ public class FoodGeneration : MonoBehaviour
     public Vector3 curPos;
     public GameObject curFood;
     
+
     void AddNewFood()
     {
         RandomPos();
@@ -25,6 +26,7 @@ public class FoodGeneration : MonoBehaviour
         if (!curFood)
         {
             AddNewFood();
+            
         }
         else
         {

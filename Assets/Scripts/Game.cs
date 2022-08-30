@@ -7,6 +7,7 @@ public class Game : MonoBehaviour
     public Material wallMaterial;
     public static int points;
     public int countWals = 10;
+    public GameObject wallPrefab;
 
     private string _pointsString;
     private int _lastPoints = -1;
@@ -14,9 +15,6 @@ public class Game : MonoBehaviour
     {
         points = 0;
         GenerateLevel();
-
-       
-
     }
     public void Update()
     {
@@ -44,7 +42,7 @@ public class Game : MonoBehaviour
             }
 
             wall.transform.position = pos;
-            
+            wall =  wallPrefab;
         }
     }
 }
