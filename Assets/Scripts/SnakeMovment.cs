@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
 
 public class SnakeMovment : MonoBehaviour
 {
@@ -9,7 +10,7 @@ public class SnakeMovment : MonoBehaviour
     public float RotationSpeed;
     public List<GameObject> tailObjects = new List<GameObject>();
     public float x_offset = 0.5f;
-
+    public UnityEvent OnEat;
     public GameObject TailPrefab;
     public Text ScoreText;
     public int score = 0;
@@ -39,6 +40,10 @@ public class SnakeMovment : MonoBehaviour
         score++;
         Vector3 newTailPos = tailObjects[tailObjects.Count-1].transform.position;
         newTailPos.x -= x_offset;
-        tailObjects.Add (GameObject.Instantiate(TailPrefab, newTailPos, Quaternion.identity) as GameObject);  
+        tailObjects.Add (GameObject.Instantiate(TailPrefab, newTailPos, Quaternion.identity) as GameObject);
+        if (OnEat != null)
+        {
+            OnEat.Invoke();
+        }
     }
 }

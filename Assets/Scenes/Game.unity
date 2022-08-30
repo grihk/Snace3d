@@ -974,6 +974,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wallMaterial: {fileID: 2100000, guid: 8ade678dcb212cf4caa96fe5ce062410, type: 2}
   countWals: 10
+  wallPrefab: {fileID: 0}
 --- !u!4 &1458521682
 Transform:
   m_ObjectHideFlags: 0
