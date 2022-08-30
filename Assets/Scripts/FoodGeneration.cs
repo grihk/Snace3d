@@ -4,7 +4,7 @@ using System.Collections;
 public class FoodGeneration : MonoBehaviour
 {
     public float XSitze = 8.8f;
-    public float ZSitze = 3.8f;
+    public float ZSitze = 8.8f;
     public GameObject foodPrefab;
     public Vector3 curPos;
     public GameObject curFood;
