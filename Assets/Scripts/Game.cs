@@ -20,7 +20,7 @@ public class Game : MonoBehaviour
     {
         if (_lastPoints == points) return;
         _lastPoints = points;
-        _pointsString = "Score:" + points.ToString("0000");
+       
     }
     public void OnGUI()
     {
